@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiNavigation.Views.Pagina02"
+             Title="Pagina02">
+    <VerticalStackLayout>
+        <Label 
+            Text="PAGINA 02"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Button Text="Voltar Anterior" 
+                x:Name="btnVoltarAnterior"
+                Clicked="btnVoltarAnterior_Clicked" />
+
+        <Button Text="Voltar Primeira Pagina" 
+                x:Name="btnVoltarPrimeira"
+                Clicked="btnVoltarPrimeira_Clicked" />
+
+
+    </VerticalStackLayout>
+</ContentPage>

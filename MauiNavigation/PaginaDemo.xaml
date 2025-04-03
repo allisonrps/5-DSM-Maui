@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiNavigation.PaginaDemo"
+             Title="PaginaDemo">
+    <VerticalStackLayout>
+
+        <Border Stroke="Black" StrokeThickness="5"
+                BackgroundColor="Coral"
+                Margin="20"
+                Padding="20"
+                >
+            
+            <Label 
+            Text="PÁGINA DEMO"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+            
+            </Border>
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+    
+    <Button Text="A"
+            Grid.Row="0"
+            Grid.Column="0" />
+
+            <Button Text="="
+            Grid.Row="0"
+            Grid.Column="4" 
+            Grid.RowSpan="4"
+            BackgroundColor="Crimson"
+            Clicked="btnPaginaFinal_clicked" />
+
+            <Button Text="b"
+            Grid.Row="3"
+            Grid.Column="1" />
+
+            <Button Text="c"
+            Grid.Row="4"
+            Grid.Column="0" />
+
+            <Button Text="d"
+            Grid.Row="0"
+            Grid.Column="3" />
+
+        </Grid>
+
+        <Button Text="Ir para página Final"
+                Margin="10"
+                x:Name="btnpagfinal"
+                Clicked="btnpagfinal_clicked"
+                />
+        
+    </VerticalStackLayout>
+</ContentPage>
