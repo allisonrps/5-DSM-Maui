@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiMYSQL.PageEstados"
+             Title="ESTADOS BRASILEIROS">
+
+    <Grid>
+        <!-- Imagem de fundo com opacidade -->
+        <Image Source="background.png"
+               Aspect="AspectFill"
+               Opacity="0.2"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill" />
+
+        <!-- Conteúdo principal sobre a imagem -->
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="15">
+
+                <!-- Imagem logo -->
+                <Image Source="logo_tr.png"
+                       HeightRequest="300"
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center" />
+
+                <!-- Nome do Estado -->
+                <Border Stroke="Black" StrokeThickness="1" BackgroundColor="White"
+                        StrokeShape="RoundRectangle 20">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Radius="5" />
+                    </Border.Shadow>
+                    <Entry x:Name="txtNome"
+                           Placeholder="NOME DO ESTADO"
+                           Keyboard="Text"
+                           FontSize="16"
+                           TextTransform="Uppercase"
+                           BackgroundColor="Transparent"
+                           Margin="10,0" />
+                </Border>
+
+                <!-- Sigla -->
+                <Border Stroke="Black" StrokeThickness="1" BackgroundColor="White"
+                        StrokeShape="RoundRectangle 20">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Radius="5" />
+                    </Border.Shadow>
+                    <Entry x:Name="txtSigla"
+                           Placeholder="SIGLA (EX: SP)"
+                           MaxLength="2"
+                           FontSize="16"
+                           TextTransform="Uppercase"
+                           Keyboard="Text"
+                           BackgroundColor="Transparent"
+                           Margin="10,0" />
+                </Border>
+
+                <!-- URL da Bandeira -->
+                <Border Stroke="Black" StrokeThickness="1" BackgroundColor="White"
+                        StrokeShape="RoundRectangle 20">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Radius="5" />
+                    </Border.Shadow>
+                    <Entry x:Name="txtBandeira"
+                           Placeholder="URL DA BANDEIRA .PNG"
+                           Keyboard="Url"
+                           FontSize="16"
+                           BackgroundColor="Transparent"
+                           Margin="10,0" />
+                </Border>
+
+                <!-- Botão Adicionar -->
+                <Border Stroke="Black"
+                        StrokeThickness="1"
+                        BackgroundColor="White"
+                        StrokeShape="RoundRectangle 20"
+                        Margin="0,10">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Radius="10" Opacity="0.4" />
+                    </Border.Shadow>
+                    <Button Text="ADICIONAR"
+                            BackgroundColor="#32CD32"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="20"
+                            HeightRequest="50"
+                            Clicked="btnAdicionar"
+                            Padding="10,0" />
+                </Border>
+
+
+                <!-- Status -->
+                <Label x:Name="lblStatus"
+                       FontSize="18"
+                       TextColor="Gray"
+                       HorizontalTextAlignment="Center" />
+
+
+
+                <!-- Lista dos Estados Adicionados -->
+                <ListView x:Name="lstEstados"
+                          HasUnevenRows="True"
+                          SeparatorVisibility="None"
+                          VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame CornerRadius="10" Padding="10" Margin="0,5"
+                                       BackgroundColor="#f9f9f9"
+                                       BorderColor="#ccc"
+                                       HasShadow="True">
+                                    <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                                        <Image Source="{Binding bandeira_url}"
+                                               WidthRequest="80"
+                                               HeightRequest="50"
+                                               Aspect="AspectFill"
+                                               VerticalOptions="Center" />
+                                        <VerticalStackLayout>
+                                            <Label Text="{Binding nome}" FontSize="16" FontAttributes="Bold" />
+                                            <Label Text="{Binding sigla}" FontSize="14" TextColor="Gray" />
+                                        </VerticalStackLayout>
+                                    </HorizontalStackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+                
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
